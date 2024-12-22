@@ -351,5 +351,4 @@ searchBar.addEventListener('keydown', function(event) {
 
 # RESULT:
 
-
 The Project for responsive web design using Bootstrap is completed successfully.
