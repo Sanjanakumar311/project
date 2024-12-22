@@ -350,4 +350,6 @@ searchBar.addEventListener('keydown', function(event) {
 ![Screenshot 2024-12-22 122503](https://github.com/user-attachments/assets/ddab4162-1f38-4002-989b-9ef49ea8c6ac)
 
 # RESULT:
+
+
 The Project for responsive web design using Bootstrap is completed successfully.
