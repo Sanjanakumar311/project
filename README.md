@@ -24,330 +24,130 @@ Publish the website in the LocalHost.
 
 # PROGRAM :
 ```python
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-    /* Reset and basic styles */
-body, h1, h2, p, a, input, button {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dribble.io</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <div class="container">
+        <a href="#Logo" class="navbar-brand mb-0 h1">
+          <img src="logo2.png" width="120" height="30" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#" class="nav-link active" aria-current="page">Shots</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Designer</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Sign up</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Sign in</a>
+            </li>
+          </ul>
+          <div class="ms-auto">
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-body {
-    background-color: #f5f5f5;
-    color: #333;
-}
+    <section class="text-center py-4 bg-dark text-white">
+      <div class="container">
+        <p class="lead fw-bold mb-4">What are you working on? Dribbble is show and tell for designers.</p>
+        <div class="d-inline-flex gap-2">
+          <a href="#" class="btn btn-primary">Learn More</a>
+          <a href="#" class="btn btn-outline-danger">Sign Up</a>
+        </div>
+      </div>
+    </section>
 
-/* Top Bar Styling */
-.top-bar {
-    display: flex;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.search-bar {
-    margin-right: 15px;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    outline: none;
-}
-
-.nav-item {
-    margin: 0 10px;
-    color: #333;
-    text-decoration: none;
-}
-
-.blue-text {
-    color: #007bff;
-    font-weight: bold;
-}
-
-.blue-text:hover {
-    text-decoration: underline;
-}
-
-/* Header Section */
-header {
-    background-image: url('https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg'); /* Add your header image */
-    background-size: cover;
-    padding: 80px 20px;
-    text-align: center;
-    color: #fff;
-}
-
-.header-content h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.header-content p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.search-input {
-    padding: 10px;
-    width: 60%;
-    max-width: 500px;
-    border: none;
-    border-radius: 4px;
-    outline: none;
-}
-
-/* Trending Searches Section */
-.trending {
-    padding: 20px;
-    text-align: center;
-}
-
-.trending h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.trending-tags {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.trending-tags span {
-    background-color: #007bff;
-    color: #fff;
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-/* Gallery Section */
-.gallery {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.card {
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    width: 200px;
-    text-align: center;
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-}
-
-.card h3 {
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.card p {
-    font-size: 12px;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-/* Gallery Section */
-.gallery {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.card {
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    width: 200px;
-    text-align: center;
-    position: relative;
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.card:hover img {
-    transform: scale(1.2); /* Scale image to 120% on hover */
-}
-
-.card h3 {
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.card p {
-    font-size: 12px;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-/* Footer Section */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 20px;
-    margin-top: 20px;
-}
-</style>
-<body>
-    <!-- Top Navigation Bar -->
-    <div class="top-bar">
-        <input type="text" class="search-bar" placeholder="Search...">
-        <a href="#" class="nav-item">Explore</a>
-        <a href="#" class="nav-item">Hire a Designer</a>
-        <a href="#" class="nav-item">Find Jobs</a>
-        <a href="#" class="nav-item">Blog</a>
-        <a href="#" class="nav-item blue-text">Sign up</a>
-        <a href="#" class="nav-item blue-text">Log in</a>
+    <div class="container py-4">
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+          <div class="card shadow rounded-3">
+            <img src="pixey.jpg" class="card-img-top" alt="Joshua's design">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">Joshua</h5>
+              <a href="#" class="btn btn-primary btn-sm">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow rounded-3">
+            <img src="andrew.jpg" class="card-img-top" alt="Anderson's design">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">Anderson</h5>
+              <a href="#" class="btn btn-primary btn-sm">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow rounded-3">
+            <img src="vka.jpg" class="card-img-top" alt="Style Designer's work">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">Style Designer</h5>
+              <a href="#" class="btn btn-primary btn-sm">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow rounded-3">
+            <img src="img4.jpg" class="card-img-top" alt="Mathew's design">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">Mathew</h5>
+              <a href="#" class="btn btn-primary btn-sm">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow rounded-3">
+            <img src="Aaron.avif" class="card-img-top" alt="Jslash's design">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">Jslash</h5>
+              <a href="#" class="btn btn-primary btn-sm">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow rounded-3">
+            <img src="uyt.jpg" class="card-img-top" alt="Ulquira's design">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">Ulquira</h5>
+              <a href="#" class="btn btn-primary btn-sm">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Header Section -->
-    <header>
-        <div class="header-content">
-            <h1>Discover the world’s top designers</h1>
-            <p>Explore work from the most talented and accomplished designers ready to take on your next project</p>
-            <input type="text" class="search-input" placeholder="What are you looking for?">
-        </div>
-    </header>
-
-    <!-- Trending Searches Section -->
-    <section class="trending">
-        <h2>Trending Searches</h2>
-        <div class="trending-tags">
-            <span>landing page</span>
-            <span>e-commerce</span>
-            <span>mobile app</span>
-            <span>logo design</span>
-            <span>dashboard</span>
-            <span>icons</span>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery">
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/2480395/pexels-photo-2480395.jpeg" alt="Design Sample">
-            <h3>Dog</h3>
-            <p>Emote Team | 7.2k Views</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/27680249/pexels-photo-27680249/free-photo-of-a-human-is-playing-tug-of-war-with-an-eager-white-golden-retriever-both-fully-engaged-in-the-fun-game.jpeg" alt="Design Sample">
-            <h3>Angry Dog</h3>
-            <p>Emote Team | 7.2k Views</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/20782645/pexels-photo-20782645/free-photo-of-white-cat-with-a-collar-on-a-street.jpeg" alt="Design Sample">
-            <h3>Cat</h3>
-            <p>Emote Team | 7.2k Views</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/28959769/pexels-photo-28959769/free-photo-of-adorable-white-maltese-dog-running-on-grass.jpeg" alt="Design Sample">
-            <h3>White Dog</h3>
-            <p>Emote Team | 7.2k Views</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/8907831/pexels-photo-8907831.jpeg" alt="Design Sample">
-            <h3>Whale</h3>
-            <p>Emote Team | 7.2k Views</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/17826913/pexels-photo-17826913/free-photo-of-close-up-of-a-speckled-wood-butterfly.jpeg" alt="Design Sample">
-            <h3>Butterfly</h3>
-            <p>Emote Team | 7.2k Views</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/4412930/pexels-photo-4412930.jpeg" alt="Design Sample">
-            <h3>Swan</h3>
-            <p>Emote Team | 7.2k Views</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/7265596/pexels-photo-7265596.jpeg" alt="Design Sample">
-            <h3>squirrel</h3>
-            <p>Emote Team | 7.2k Views</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/160722/cat-tiger-getiegert-feel-at-home-160722.jpeg" alt="Design Sample">
-            <h3>Cat</h3>
-            <p>Emote Team | 7.2k Views</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/357316/pexels-photo-357316.jpeg" alt="Design Sample">
-            <h3>Bird</h3>
-            <p>Emote Team | 7.2k Views</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/12764322/pexels-photo-12764322.png" alt="Design Sample">
-            <h3>Grass Hopper</h3>
-            <p>Emote Team | 7.2k Views</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.pexels.com/photos/12755675/pexels-photo-12755675.jpeg" alt="Design Sample">
-            <h3>Deer</h3>
-            <p>Emote Team | 7.2k Views</p>
-        </div>
-        <!-- Add more cards as needed -->
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Design Portfolio. All rights reserved.</p>
+    <footer class="bg-dark text-white text-center py-3">
+      <h2 class="h6 m-0">Designed and developed by K Barathaj (24001402)</h2>
     </footer>
 
-    <script>
-        // Search functionality
-const searchBar = document.querySelector('.search-bar');
-
-searchBar.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        event.preventDefault(); // Prevent default form submission
-        alert(`Searching for: ${searchBar.value}`);
-    }
-});
-    </script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
+
 ```
 # OUTPUT:
-![Screenshot 2024-12-22 122453](https://github.com/user-attachments/assets/77a77d56-dfe7-42d5-9d03-0ef644382d2c)
-![Screenshot 2024-12-22 122503](https://github.com/user-attachments/assets/ddab4162-1f38-4002-989b-9ef49ea8c6ac)
+
+![image](https://github.com/user-attachments/assets/b829f691-304e-4432-84dd-8146274a6257)
+
 
 # RESULT:
 
